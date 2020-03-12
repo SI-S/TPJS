@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="Day091.css">
+  
+
+</ul>
+</head>
+<body>
+<canvas id="canvas" height="400" width="600"></canvas>
+<script rel="text/javascript">
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var xPos = 0
+var yPos = 0
+context.rect(xPos, yPos, 50, 50);
+context.stroke();
+function anim(e) {
+if(e.keyCode == 39){
+	xPos+=5
+}
+if(e.keyCode==37) {
+	xPos-=5;
+}
+if(e.keyCode==40) {
+	yPos+=5;
+}
+if(e.keyCode==38) {
+	yPos-=5;
+}
+
+canvas.width = canvas.width;
+context.rect(xPos, yPos, 50, 50);
+context.stroke();
+
+   }
+document.onkeydown = anim;
+</script>
+</body>
+<footer></footer>
+</html>
